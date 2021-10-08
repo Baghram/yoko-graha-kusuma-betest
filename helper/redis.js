@@ -7,7 +7,7 @@ const client = createClient({
   },
 });
 client["auth"] = null;
-client;
+client.auth(process.env.REDISPASS)
 client.on("error", (error) => {
   console.log(error);
 });
