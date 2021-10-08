@@ -7,7 +7,7 @@ const client = createClient({
   },
 });
 client["auth"] = null;
-client.auth(process.env.REDISPASS)
+client.sendCommand('AUTH', ["", process.env.REDISPASS])
 client.on("error", (error) => {
   console.log(error);
 });
