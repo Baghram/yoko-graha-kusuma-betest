@@ -1,9 +1,7 @@
 const { createClient } = require("redis");
 
-const client = createClient(process.env.REDIS, {
-  tls: {
-    rejectUnauthorized: false,
-  },
+const client = createClient({
+    url: process.env.REDIS
 });
 client['auth'] = null;
 client.on("error", (error) => {
